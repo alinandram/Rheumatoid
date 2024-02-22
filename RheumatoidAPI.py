@@ -1,10 +1,6 @@
 from flask import Flask, request
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
-
 import pickle
 with open('finalized_model.sav','rb') as pickle_file:
   model = pickle.load(pickle_file)
