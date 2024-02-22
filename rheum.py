@@ -21,7 +21,8 @@ def hasRheumatioid():
     y= model.predict(pandasRow)
     return np.ndarray.tolist(y)
 
-app.run()
+if __name__ == "__main__":
+    app.run()
 
 
 
