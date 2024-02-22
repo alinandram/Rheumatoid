@@ -1,1 +1,1 @@
-web: gunicorn pr:RheumatoidAPI --log-file-
+web: gunicorn rheum:app
