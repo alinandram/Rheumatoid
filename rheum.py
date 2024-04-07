@@ -8,7 +8,7 @@ def hello_world():
     return 'Hello, World!'
 
 import pickle
-with open('finalized_model (1).sav','rb') as pickle_file:
+with open('finalized_model.sav','rb') as pickle_file:
   model = pickle.load(pickle_file)
 
 import pandas as pd
