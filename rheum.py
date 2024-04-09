@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[3]:
+
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 
@@ -8,7 +14,7 @@ def hello_world():
     return 'Hello, World!'
 
 import pickle
-with open('finalized_model.sav','rb') as pickle_file:
+with open('xGBoost_model.sav','rb') as pickle_file:
   model = pickle.load(pickle_file)
 
 import pandas as pd
@@ -26,6 +32,10 @@ def hasRheumatioid():
 
 if __name__ == "__main__":
     app.run()
+
+
+# In[ ]:
+
 
 
 
