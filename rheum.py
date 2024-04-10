@@ -8,6 +8,14 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
+
+const corsOrigin ={
+    origin:'http://localhost:3000', 
+    credentials:true,            
+    optionSuccessStatus:200
+}
+app.use(cors(corsOrigin));
+
 CORS(app, support_credentials=False)
 @app.route('/')
 def hello_world():
