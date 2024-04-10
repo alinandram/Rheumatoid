@@ -9,13 +9,16 @@ from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 
-import cors from "cors";
-const corsOrigin ={
-    origin:'http://localhost:3000', 
-    credentials:true,            
-    optionSuccessStatus:200
-}
-app.use(cors(corsOrigin));
+import cors from 'cors';
+
+const corsOptions = {
+   origin: 'http://localhost:3000',
+   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+   credentials: true,
+   optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));  // Use cors middleware
 
 CORS(app, support_credentials=False)
 @app.route('/')
