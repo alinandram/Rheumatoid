@@ -5,11 +5,10 @@
 
 
 from flask import Flask, request, jsonify
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
-cors = CORS(app, resources={r"/mymodel": {"origins": "http://localhost:3000", "headers": ["Content-Type"]}})
-
+CORS(app)
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
@@ -24,7 +23,8 @@ def convertMapToPandasRow(x):
     
 import numpy as np
 
-@app.route('/mymodel', methods = ['POST'])
+@app.route('/my_model', methods = ['POST'])
+@cross_origin()
 def hasRheumatioid():
     x = request.json
     pandasRow = convertMapToPandasRow(x)
