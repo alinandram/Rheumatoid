@@ -17,7 +17,7 @@ def convertMapToPandasRow(x):
     
 import numpy as np
 
-@app.route('/mymodel', methods = ['POST'])
+@app.route('/my_model', methods = ['POST'])
 @cross_origin()
 def hasRheumatioid():
     x = request.json
