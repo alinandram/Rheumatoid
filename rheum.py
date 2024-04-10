@@ -9,6 +9,7 @@ from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 
+import cors from "cors";
 const corsOrigin ={
     origin:'http://localhost:3000', 
     credentials:true,            
